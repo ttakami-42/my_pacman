@@ -1,8 +1,6 @@
 NAME	= pacman
 CC		= g++
 CFLAGS	= -std=c++17 -Wall -Wextra -Werror
-MLIB	= -lncurses
-ULIB	= -lncursesw
 SRCS	= main.cpp play_game_utils.cpp \
 			play_game.cpp show_menu.cpp \
 			show_menu_utils.cpp ft_window.cpp \
@@ -11,6 +9,13 @@ SRCS	= main.cpp play_game_utils.cpp \
 			ft_wani.cpp ft_powerfood.cpp
 OBJDIR	= obj
 OBJS	= $(addprefix $(OBJDIR)/, $(SRCS:.cpp=.o))
+
+UNAME = $(shell uname -s)
+ifeq ($(UNAME), Linux)
+	LIB	= -lncursesw
+else
+	LIB	= -lncurses
+endif
 
 all: directories $(NAME)
 
@@ -30,7 +35,7 @@ $(OBJDIR)/%.o:	%.cpp
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(ULIB)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIB)
 
 .PHONY: all clean fclean re
 
