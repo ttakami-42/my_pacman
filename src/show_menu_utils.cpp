@@ -10,7 +10,8 @@ int		Menu::control_menu(void)
 		ch = wgetch(menuw);
 		sprintf(item, "%s", LIST[i]);
 		mvwprintw(menuw, i + 1, 2, "%s", item);
-		switch(ch) {
+		switch (ch)
+		{
 			case Const::CONTROL_UP:
 				i--;
 				i = (i < 0) ? (Const::NITEMS - 1) : i;
@@ -44,7 +45,7 @@ int		Menu::select_stage(void)
 	while (1)
 	{
 		dh = wgetch(miw);
-		switch(dh)
+		switch (dh)
 		{
 			case Const::CONTROL_DOWN :
 				stage--;

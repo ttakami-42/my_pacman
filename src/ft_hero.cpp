@@ -36,7 +36,7 @@ void	Hero::move(Map* m, int direction)
 void	Hero::draw(char game_state)
 {
 	wattrset(gamew, COLOR_PAIR(Const::HERO));
-	switch(game_state)
+	switch (game_state)
 	{
 		case Const::PLAYING:
 			if ((y + x) % 2) { mvwaddstr(gamew, y, x * 2, "😃"); }
