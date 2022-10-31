@@ -7,7 +7,6 @@ void	play_game(int stage)
 	Asset	asset;
 
 	//system("xset r off");
-
 	Banner::show_banner(stage);
 	asset.initAsset(stage);
 	while (1)
@@ -19,8 +18,10 @@ void	play_game(int stage)
 			Banner::show_pausebanner();
 			Banner::show_banner(stage);
 		}
-		if (ch == 'q' && (state == Const::PLAYING || state == Const::ALMIGHTY)) { return ; }
-		if ((state == Const::CLEARED || (state == Const::GAMEOVER)) && (ch == ' ')) { return ; }
+		if (ch == 'q' && (state == Const::PLAYING || state == Const::ALMIGHTY))
+			return ;
+		if ((state == Const::CLEARED || (state == Const::GAMEOVER)) && (ch == ' '))
+			return ;
 		if (state == Const::PLAYING)
 		{
 			asset.replaceHero(ch);
@@ -31,13 +32,15 @@ void	play_game(int stage)
 		{
 			asset.replaceHero(ch);
 			asset.addPowerTime();
-			if (asset.getPowerTime() > Const::POWERTIME) { asset.setGameState(Const::PLAYING); }
+			if (asset.getPowerTime() > Const::POWERTIME)
+				asset.setGameState(Const::PLAYING);
 		}
 		werase(gamew);
 		asset.drawAll();
 		asset.printState();
 		wrefresh(gamew);
-		if (asset.getUneatenFoods() == 0) { asset.setGameState(Const::CLEARED); }
+		if (asset.getUneatenFoods() == 0)
+			asset.setGameState(Const::CLEARED);
 	}
 	return ;
 }

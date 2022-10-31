@@ -5,7 +5,8 @@ int		Menu::control_menu(void)
 	int	i;
 
 	i = 0;
-	while (1) {
+	while (1)
+	{
 		ch = wgetch(menuw);
 		sprintf(item, "%s", LIST[i]);
 		mvwprintw(menuw, i + 1, 2, "%s", item);
@@ -13,26 +14,24 @@ int		Menu::control_menu(void)
 			case Const::CONTROL_UP:
 				i--;
 				i = (i < 0) ? (Const::NITEMS - 1) : i;
-				break;
+				break ;
 			case Const::CONTROL_DOWN:
 				i++;
 				i = (i > (Const::NITEMS - 1)) ? 0 : i;
-				break;
+				break ;
 			case Const::CONTROL_NEXT:
 				werase(miw);
-				if (i == 0) {
+				if (i == 0)
+				{
 					show_inst();
 					return (select_stage());
 				}
-				else if (i == 1) {
+				else if (i == 1)
 					show_inst(miw);
-				}
-				else if (i == 2) {
+				else if (i == 2)
 					show_dev_info();
-				}
-				else if (i == 3) {
+				else if (i == 3)
 					return (END_GAME);
-				}
 				break ;
 		}
 		highlight_menu(i);
@@ -42,15 +41,19 @@ int		Menu::control_menu(void)
 
 int		Menu::select_stage(void)
 {
-	while (1) {
+	while (1)
+	{
 		dh = wgetch(miw);
-		switch(dh) {
-			case Const::CONTROL_DOWN : stage--;
+		switch(dh)
+		{
+			case Const::CONTROL_DOWN :
+				stage--;
 				stage = (stage < 1) ? (Const::NUMBER_OF_STAGES) : stage;
-				break;
-			case Const::CONTROL_UP : stage++;
+				break ;
+			case Const::CONTROL_UP :
+				stage++;
 				stage = (stage > Const::NUMBER_OF_STAGES) ? 1 : stage;
-				break;
+				break ;
 			case Const::CONTROL_BACK :
 				return (0);
 			case Const::CONTROL_NEXT :
@@ -90,7 +93,8 @@ void	Menu::show_inst(void)
 }
 
 // ゲーム中に表示する操作説明
-void	Menu::show_inst(WINDOW *w) {
+void	Menu::show_inst(WINDOW *w)
+{
 	mvwprintw(w, 1, 2, "Controls :");
 	mvwprintw(w, 3, 2, "Move Left -> %c", Const::CONTROL_LEFT);
 	mvwprintw(w, 4, 2, "Move Right -> %c", Const::CONTROL_RIGHT);

@@ -6,7 +6,8 @@ int		Menu::show_menu(void)
 
 	box(menuw, ACS_VLINE, ACS_HLINE);
 	show_title();
-	for(size_t i = 0; i < Const::NITEMS; i++) {
+	for(size_t i = 0; i < Const::NITEMS; i++)
+	{
 		if(i == 0)
 			wattron(menuw, A_STANDOUT);
 		else

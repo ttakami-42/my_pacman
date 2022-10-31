@@ -4,7 +4,7 @@ void	init_menu_windows(void)
 {
 	menuw = newwin(15, 25, 8, 14);
 	miw = newwin(10, 45, 10, 40);
-	titlew = newwin(7, 44, 1, 14);
+	titlew = newwin(7, 44, 1, 20);
 }
 
 // ウィンドウの初期化
