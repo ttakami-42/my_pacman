@@ -37,6 +37,6 @@ $(OBJDIR)/%.o:	%.cpp
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIB)
 
-.PHONY: all clean fclean re
+.PHONY: all directories clean fclean re
 
 vpath %.cpp src
