@@ -2,65 +2,38 @@
 
 void	Asset::initAsset(int stage)
 {
-	switch (stage)
+	(*mp).init(stage);
+	if (stage == 1)
 	{
-		case 1:
-			(*mp).init(stage);
-			hero.init(11, 5);
-			wani[0].init( 9,  7, Const::RIGHT, Const::ACTIVE);
-			wani[1].init(12, 12, Const::LEFT,  Const::ACTIVE);
-			wani[2].init(-1, -1, Const::STOP,  Const::INACTIVE);
-			wani[3].init(-1, -1, Const::STOP,  Const::INACTIVE);
-			wani[4].init(-1, -1, Const::STOP,  Const::INACTIVE);
-			ghost[0].init(-1, -1, Const::INACTIVE);
-			ghost[1].init(-1, -1, Const::INACTIVE);
-			ghost[2].init(-1, -1, Const::INACTIVE);
-			ghost[3].init(-1, -1, Const::INACTIVE);
-			ghost[4].init(-1, -1, Const::INACTIVE);
-			powerfood[0].init(-1, -1, Const::INACTIVE);
-			powerfood[1].init(-1, -1, Const::INACTIVE);
-			powerfood[2].init(-1, -1, Const::INACTIVE);
-			powerfood[3].init(-1, -1, Const::INACTIVE);
-			powerfood[4].init(-1, -1, Const::INACTIVE);
-			break ;
-		case 2:
-			(*mp).init(stage);
-			hero.init(13, 10);
-			wani[0].init(15,  4, Const::RIGHT, Const::ACTIVE);
-			wani[1].init(15, 16, Const::RIGHT, Const::ACTIVE);
-			wani[2].init( 7, 10, Const::LEFT,  Const::ACTIVE);
-			wani[3].init( 8, 11, Const::STOP,  Const::ACTIVE);
-			wani[4].init( 8,  8, Const::STOP,  Const::ACTIVE);
-			ghost[0].init( 2,  1, Const::ACTIVE);
-			ghost[1].init(24, 18, Const::ACTIVE);
-			ghost[2].init(-1, -1, Const::INACTIVE);
-			ghost[3].init(-1, -1, Const::INACTIVE);
-			ghost[4].init(-1, -1, Const::INACTIVE);
-			powerfood[0].init(-1, -1, Const::INACTIVE);
-			powerfood[1].init(-1, -1, Const::INACTIVE);
-			powerfood[2].init(-1, -1, Const::INACTIVE);
-			powerfood[3].init(-1, -1, Const::INACTIVE);
-			powerfood[4].init(-1, -1, Const::INACTIVE);
-			break ;
-		case 3:
-			(*mp).init(stage);
-			hero.init(13, 10);
-			wani[0].init(20, 14, Const::RIGHT, Const::ACTIVE);
-			wani[1].init(15, 16, Const::RIGHT, Const::ACTIVE);
-			wani[2].init(9, 10, Const::LEFT,   Const::ACTIVE);
-			wani[3].init(6, 3, Const::RIGHT,   Const::ACTIVE);
-			wani[4].init(-1, -1, Const::STOP,  Const::INACTIVE);
-			ghost[0].init(-1, -1, Const::INACTIVE);
-			ghost[1].init(-1, -1, Const::INACTIVE);
-			ghost[2].init(-1, -1, Const::INACTIVE);
-			ghost[3].init(-1, -1, Const::INACTIVE);
-			ghost[4].init(-1, -1, Const::INACTIVE);
-			powerfood[0].init(19, 10, Const::ACTIVE);
-			powerfood[1].init(-1, -1, Const::INACTIVE);
-			powerfood[2].init(-1, -1, Const::INACTIVE);
-			powerfood[3].init(-1, -1, Const::INACTIVE);
-			powerfood[4].init(-1, -1, Const::INACTIVE);
-			break ;
+		hero.init(11, 5);
+		wani[0].init( 9, 7, Const::RIGHT, Const::ACTIVE);
+		wani[1].init(12, 12, Const::LEFT, Const::ACTIVE);
+		inactivateAsset(wani, 2, Const::NUMBER_OF_WANIS);
+		inactivateAsset(ghost, 0, Const::NUMBER_OF_GHOSTS);
+		inactivateAsset(powerfood, 0, Const::NUMBER_OF_POWERFOODS);
+	}
+	else if (stage == 2)
+	{
+		hero.init(13, 10);
+		wani[0].init(8, 11, Const::STOP, Const::INACTIVE);
+		wani[1].init(8, 8, Const::STOP, Const::INACTIVE);
+		inactivateAsset(wani, 2, Const::NUMBER_OF_WANIS);
+		ghost[0].init( 2, 1, Const::ACTIVE);
+		ghost[1].init(24, 18, Const::ACTIVE);
+		inactivateAsset(ghost, 2, Const::NUMBER_OF_GHOSTS);
+		inactivateAsset(powerfood, 0, Const::NUMBER_OF_POWERFOODS);
+	}
+	else if (stage == 3)
+	{
+		hero.init(13, 10);
+		wani[0].init(20, 14, Const::RIGHT, Const::ACTIVE);
+		wani[1].init(15, 16, Const::RIGHT, Const::ACTIVE);
+		wani[2].init(9, 10, Const::LEFT, Const::ACTIVE);
+		wani[3].init(6, 3, Const::RIGHT, Const::ACTIVE);
+		inactivateAsset(wani, 4, Const::INACTIVE);
+		inactivateAsset(ghost, 0, Const::NUMBER_OF_GHOSTS);
+		powerfood[0].init(19, 10, Const::ACTIVE);
+		inactivateAsset(powerfood, 1, Const::NUMBER_OF_POWERFOODS);
 	}
 }
 

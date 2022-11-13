@@ -8,7 +8,8 @@
 class Ghost
 {
 private:
-	int y, x;
+	int y;
+	int x;
 	int wait_max = 140; // GETCH_WAITの140倍という意味
 	int wait = 0;
 	const int vertical = 0;
@@ -24,7 +25,7 @@ public:
 	void move(Hero h);
 	
 	// 幽霊を指定の座標に表示する関数
-	void draw();
+	void draw(void);
 
 	// 幽霊がヒーローに衝突したかどうかを判定をする関数
 	bool killedHero(Hero h);

@@ -30,6 +30,19 @@ class	Asset
 		Powerfood	powerfood[Const::NUMBER_OF_POWERFOODS];
 
 	public:
+		template <typename OBJ>
+		void	inactivateAsset(OBJ o, int n, int max)
+		{
+			for (; n < max; n++)
+				o[n].init(-1, -1, Const::INACTIVE);
+		}
+		template <>
+		void	inactivateAsset(Wani *w, int n, int max)
+		{
+			for (; n < max; n++)
+				w[n].init(-1, -1, Const::STOP, Const::INACTIVE);
+		}
+		
 		void		initAsset(int stage);
 		void		replaceHero(char c);
 		void		moveEnemies(void);
@@ -55,7 +68,7 @@ class	Asset
 			powertime++;
 		}
 
-		int			getUneatenFoods()
+		int			getUneatenFoods(void)
 		{
 			return ((*mp).countUneatenFoods());
 		}

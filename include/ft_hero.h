@@ -12,13 +12,14 @@ private:
 	int wait = 0;
 
 public:
-	int y, x;
+	int y;
+	int x;
 
 	// ヒーローを初期化する関数
 	void init(int arg_y, int arg_x);
 
 	// ヒーローのwaitを減らす関数
-	void waitupdate();
+	void waitupdate(void);
 
 	// ヒーローの座標を更新する関数
 	void move(Map* m, int direction);

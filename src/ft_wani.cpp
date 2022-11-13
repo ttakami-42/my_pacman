@@ -61,7 +61,7 @@ void	Wani::move(Map* m, Hero h)
 }
 
 // ワニを指定の座標に表示する関数
-void	Wani::draw()
+void	Wani::draw(void)
 {
 	if (state == Const::INACTIVE)
 		return ;
@@ -72,8 +72,5 @@ void	Wani::draw()
 // ワニがヒーローに衝突したかどうかを判定をする関数
 bool	Wani::killedHero(Hero h)
 {
-	if ((y == h.y) && (x == h.x))
-		return (true);
-	else
-		return (false);
+	return ((y == h.y) && (x == h.x));
 }

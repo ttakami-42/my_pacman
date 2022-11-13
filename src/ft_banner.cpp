@@ -3,7 +3,7 @@
 // ゲーム中に表示するステータス
 void	Banner::show_banner(int stage)
 {
-	wclear(bannerw);
+	werase(bannerw);
 	wattrset(bannerw, COLOR_PAIR(18));
 	box(bannerw, ' ', ' ');
 	mvwprintw(bannerw, 2, 5, "AREA: %d ", stage);
@@ -59,4 +59,6 @@ void	Banner::show_pausebanner(void)
 	wattroff(pausew, COLOR_PAIR(15));
 	wrefresh(pausew);
 	wgetch(pausew);
+	werase(pausew);
+	delwin(pausew);
 }

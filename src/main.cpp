@@ -9,7 +9,6 @@ WINDOW	*menuw, *miw, *titlew, *gamew, *instw, *bannerw, *pausew;
 int		main(void)
 {
 	int		stage_no;
-	Menu	menu;
 
 	setlocale(LC_ALL,"");
 	initscr();
@@ -22,7 +21,7 @@ int		main(void)
 	{
 		init_bg_colors();
 		init_menu_windows();
-		stage_no = menu.show_menu();
+		stage_no = show_menu();
 		del_menu_windows();
 		if (stage_no == END_GAME)
 		{
@@ -32,7 +31,7 @@ int		main(void)
 		if (stage_no >= 1)
 		{
 			init_game_windows();
-			menu.show_inst(instw);
+			Menu::show_how_to_play(instw);
 			keypad(gamew, TRUE);
 			play_game(stage_no);
 			del_game_windows();

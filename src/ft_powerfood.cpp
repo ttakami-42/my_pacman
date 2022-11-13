@@ -9,7 +9,7 @@ void	Powerfood::init(int arg_y, int arg_x, int arg_state)
 }
 
 // パワーエサを指定の座標に表示する関数
-void	Powerfood::draw()
+void	Powerfood::draw(void)
 {
 	if (state == Const::INACTIVE)
 		return ;

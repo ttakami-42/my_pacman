@@ -9,7 +9,8 @@
 class Wani
 {
 private:
-	int y, x;
+	int y;
+	int x;
 	const int wait_max_slow = 25; // GETCH_WAITの25倍という意味
 	const int wait_max_fast = 20; // GETCH_WAITの20倍という意味
 	int wait_max = wait_max_slow;
@@ -23,10 +24,10 @@ public:
 
 	// ワニの座標を更新する関数
 	void move(Map* m, Hero h);
-	
+
 	// ワニを指定の座標に表示する関数
-	void draw();
-	
+	void draw(void);
+
 	// ワニがヒーローに衝突したかどうかを判定をする関数
 	bool killedHero(Hero h);
 };

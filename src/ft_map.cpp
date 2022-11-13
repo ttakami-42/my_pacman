@@ -72,7 +72,7 @@ bool	Map::isWall(int y, int x)
 }
 
 // マップ上にエサが何個残っているかを数える関数
-int		Map::countUneatenFoods()
+int		Map::countUneatenFoods(void)
 {
 	int q = 0;
 

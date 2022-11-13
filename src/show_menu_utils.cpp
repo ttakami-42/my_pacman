@@ -8,7 +8,7 @@ int		Menu::control_menu(void)
 	while (1)
 	{
 		ch = wgetch(menuw);
-		sprintf(item, "%s", LIST[i]);
+		std::snprintf(item, sizeof(item), "%s", LIST[i]);
 		mvwprintw(menuw, i + 1, 2, "%s", item);
 		switch (ch)
 		{
@@ -22,13 +22,14 @@ int		Menu::control_menu(void)
 				break ;
 			case Const::CONTROL_NEXT:
 				werase(miw);
+				wrefresh(miw);
 				if (i == 0)
 				{
-					show_inst();
+					show_how_to_select();
 					return (select_stage());
 				}
 				else if (i == 1)
-					show_inst(miw);
+					show_how_to_play(miw);
 				else if (i == 2)
 					show_dev_info();
 				else if (i == 3)
@@ -70,18 +71,14 @@ void	Menu::show_title(void)
 {
 	wattrset(titlew, COLOR_PAIR(7));
 	box(titlew, ' ', ACS_BULLET);
-	int i = 0;
-	while (i < 5)
-	{
+	for (int i = 0; i < 5; i++)
 		mvwprintw(titlew, i + 1, 1, title_ascii[i]);
-		i++;
-	}
 	wattroff(titlew, COLOR_PAIR(7));
 	wrefresh(titlew);
 }
 
 // マップ選択中に表示する操作説明
-void	Menu::show_inst(void)
+void	Menu::show_how_to_select(void)
 {
 	mvwprintw(miw, 1, 2, "Select map :");
 	mvwprintw(miw, 2, 5, " %d ", stage);
@@ -94,7 +91,7 @@ void	Menu::show_inst(void)
 }
 
 // ゲーム中に表示する操作説明
-void	Menu::show_inst(WINDOW *w)
+void	Menu::show_how_to_play(WINDOW *w)
 {
 	mvwprintw(w, 1, 2, "Controls :");
 	mvwprintw(w, 3, 2, "Move Left -> %c", Const::CONTROL_LEFT);
@@ -110,10 +107,10 @@ void	Menu::show_inst(WINDOW *w)
 void	Menu::show_dev_info(void)
 {
 	mvwprintw(miw, 2, 2, "Game Developer :");
-	mvwprintw(miw, 4, 2, "Contact info :");
+	mvwprintw(miw, 5, 2, "Contact info :");
 	wattrset(miw, COLOR_PAIR(13));
-	mvwprintw(miw, 3, 2, "  \"Tomoki Takami⏳\"");
-	mvwprintw(miw, 5, 2, "  \"a20.48x6@g.chuo-u.ac.jp\"");
+	mvwprintw(miw, 3, 2, "  \"Tomoki Takami\"");
+	mvwprintw(miw, 6, 2, "  \"a20.48x6@g.chuo-u.ac.jp\"");
 	wattroff(miw, COLOR_PAIR(13));
 	box(miw, ACS_VLINE, ACS_HLINE);
 	wrefresh(miw);
@@ -122,7 +119,7 @@ void	Menu::show_dev_info(void)
 void	Menu::highlight_menu(int i)
 {
 	wattron(menuw, A_STANDOUT);
-	sprintf(item, "%s", LIST[i]);
+	std::snprintf(item, sizeof(item), "%s", LIST[i]);
 	mvwprintw(menuw, i + 1, 2, "%s", item);
 	wattroff(menuw, A_STANDOUT);
 }

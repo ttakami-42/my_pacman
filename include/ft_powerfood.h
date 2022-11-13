@@ -7,7 +7,8 @@
 class Powerfood
 {
 private:
-	int y, x;
+	int y;
+	int x;
 	int state; // 不活性かどうかの状態
 
 public:
@@ -15,7 +16,7 @@ public:
 	void init(int arg_y, int arg_x, int arg_state);
 
 	// パワーエサを指定の座標に表示する関数
-	void draw();
+	void draw(void);
 
 	// パワーエサがヒーローに衝突したかどうかを判定をする関数
 	bool GetPowerFood(Hero h);

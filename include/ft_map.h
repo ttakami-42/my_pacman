@@ -111,7 +111,7 @@ public:
 	bool isWall(int y, int x);
 
 	// マップ上に現在エサが何個残っているかを数える関数
-	int countUneatenFoods();
+	int countUneatenFoods(void);
 
 	// 文字列（定数）を指定の座標に表示する関数
 	void printString(int y, int x, const char msg[]);
