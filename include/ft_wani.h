@@ -11,8 +11,8 @@ class Wani
 private:
 	int y;
 	int x;
-	const int wait_max_slow = 25; // GETCH_WAITの25倍という意味
-	const int wait_max_fast = 20; // GETCH_WAITの20倍という意味
+	const int wait_max_slow = 25;
+	const int wait_max_fast = 20;
 	int wait_max = wait_max_slow;
 	int wait = 0;
 	int direction;

@@ -9,7 +9,7 @@ class Powerfood
 private:
 	int y;
 	int x;
-	int state; // 不活性かどうかの状態
+	int state;
 
 public:
 	// パワーエサを初期化する関数

@@ -8,7 +8,7 @@ class Map
 private:
 	static const int MAP_SIZE_Y = 25; // マップの縦幅
 	static const int MAP_SIZE_X = 20; // マップの横幅
-	int data[MAP_SIZE_Y][MAP_SIZE_X]; // マップのデータをここにコピーする
+	int data[MAP_SIZE_Y][MAP_SIZE_X];
 
 	int stage1[MAP_SIZE_Y][MAP_SIZE_X] = {
 			{ 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 },
@@ -116,7 +116,7 @@ public:
 	// 文字列（定数）を指定の座標に表示する関数
 	void printString(int y, int x, const char msg[]);
 
- 	// 整数を指定の座標に表示する関数
+	// 整数を指定の座標に表示する関数
 	void printInt(int y, int x, int n);
 };
 
