@@ -65,6 +65,6 @@ public:
 	static const char	CONTROL_BACK = 'q';
 };
 
-extern WINDOW *menuw, *miw, *titlew, *gamew, *instw, *bannerw, *pausew;
+extern WINDOW *menuw, *miw, *titlew, *gamew, *instw, *bannerw;
 
 #endif

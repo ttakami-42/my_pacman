@@ -1,9 +1,21 @@
 #include "../include/ft_banner.h"
 
 // ゲーム中に表示するステータス
-void	Banner::show_banner(int stage)
+void	Banner::show_banner(int stage, int pause_flag)
 {
 	werase(bannerw);
+	if (pause_flag)
+	{
+		wattrset(bannerw, COLOR_PAIR(15));
+		box(bannerw, ACS_BULLET, ACS_BULLET);
+		mvwprintw(bannerw, 2, 1, "..... Game Paused .....");
+		mvwprintw(bannerw, 4, 5, "Press any key:");
+		mvwprintw(bannerw, 5, 5, "to continue");
+		wattroff(bannerw, COLOR_PAIR(15));
+		wrefresh(bannerw);
+		wgetch(bannerw);
+		werase(bannerw);
+	}
 	wattrset(bannerw, COLOR_PAIR(18));
 	box(bannerw, ' ', ' ');
 	mvwprintw(bannerw, 2, 5, "AREA: %d ", stage);
@@ -25,7 +37,8 @@ void	Banner::update_banner(int esa)
 // ゲームオーバーまたはクリアのときの表示
 void	Banner::update_banner(char game_state)
 {
-	if(game_state == 'c')
+	werase(bannerw);
+	if (game_state == Const::CLEARED)
 	{
 		wattrset(bannerw, COLOR_PAIR(17));
 		box(bannerw, ' ', ' ');
@@ -35,7 +48,7 @@ void	Banner::update_banner(char game_state)
 		wattroff(bannerw, COLOR_PAIR(17));
 		wrefresh(bannerw);
 	}
-	if(game_state == 'g')
+	if (game_state == Const::GAMEOVER)
 	{
 		wattrset(bannerw, COLOR_PAIR(12));
 		box(bannerw, ' ', ' ');
@@ -45,20 +58,4 @@ void	Banner::update_banner(char game_state)
 		wattroff(bannerw, COLOR_PAIR(12));
 		wrefresh(bannerw);
 	}
-}
-
-// ポーズメニューの作成
-void	Banner::show_pausebanner(void)
-{
-	pausew = newwin(8, Const::GAME_WIDTH - 15, 16, Const::GAME_WIDTH);
-	wattrset(pausew, COLOR_PAIR(15));
-	box(pausew, ACS_BULLET, ACS_BULLET);
-	mvwprintw(pausew, 2, 1, "..... Game Paused .....");
-	mvwprintw(pausew, 4, 5, "Press any key:");
-	mvwprintw(pausew, 5, 5, "to continue");
-	wattroff(pausew, COLOR_PAIR(15));
-	wrefresh(pausew);
-	wgetch(pausew);
-	werase(pausew);
-	delwin(pausew);
 }

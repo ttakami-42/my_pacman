@@ -18,8 +18,6 @@ void	Ghost::move(Hero h)
 		wait--;
 		return ;
 	}
-
-	// waitが0の瞬間だけ、以下の座標の更新処理をおこなう
 	wait = wait_max;
 	if (direction == vertical)
 	{

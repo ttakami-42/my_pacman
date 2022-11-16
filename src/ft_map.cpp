@@ -53,24 +53,6 @@ void	Map::drawmap(char game_state)
 	}
 }
 
-// ヒーローによってエサが食べられて消える処理をする関数
-void	Map::eaten(int y, int x)
-{ 
-	data[y][x] = Const::ROAD;
-}
-
-// 座標(y, x)の場所がエサならtrue、それ以外ならばfalseを返す関数
-bool	Map::isFood(int y, int x)
-{
-	return (data[y][x] == Const::FOOD);
-}
-
-// 座標(y, x)の場所が壁ならtrue、それ以外ならばfalseを返す関数
-bool	Map::isWall(int y, int x)
-{
-	return (data[y][x] == Const::WALL);
-}
-
 // マップ上にエサが何個残っているかを数える関数
 int		Map::countUneatenFoods(void)
 {
@@ -100,10 +82,3 @@ void	Map::printInt(int y, int x, int n)
 	wattrset(gamew, COLOR_PAIR(Const::MESG));
 	mvwprintw(gamew, y, x * 2, "%d", n);
 }
-
-/*int	Map::randint_xy()
-{
-	rand();
-	
-}
-*/
