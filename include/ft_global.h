@@ -62,7 +62,8 @@ public:
 	static const char	CONTROL_LEFT = 'a';
 	static const char	CONTROL_RIGHT = 'd';
 	static const char	CONTROL_NEXT = 'e';
-	static const char	CONTROL_BACK = 'q';
+	static const char	CONTROL_PAUSE = 'p';
+	static const char	CONTROL_QUIT = 'q';
 };
 
 extern WINDOW *menuw, *miw, *titlew, *gamew, *instw, *bannerw;

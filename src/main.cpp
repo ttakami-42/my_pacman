@@ -4,7 +4,7 @@
 #include "../include/ft_window.h"
 #include "../include/ft_colors.h"
 
-WINDOW	*menuw, *miw, *titlew, *gamew, *instw, *bannerw, *pausew;
+WINDOW	*menuw, *miw, *titlew, *gamew, *instw, *bannerw;
 
 int		main(void)
 {
@@ -32,7 +32,8 @@ int		main(void)
 		{
 			init_game_windows();
 			Menu::show_how_to_play(instw);
-			keypad(gamew, TRUE);
+			//keypad(gamew, TRUE);
+			//system("xset r off");
 			play_game(stage_no);
 			del_game_windows();
 			//system("/usr/bin/xset r rate 500 33");

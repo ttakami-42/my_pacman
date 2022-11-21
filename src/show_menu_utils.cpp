@@ -56,7 +56,7 @@ int		Menu::select_stage(void)
 				stage++;
 				stage = (stage > Const::NUMBER_OF_STAGES) ? 1 : stage;
 				break ;
-			case Const::CONTROL_BACK :
+			case Const::CONTROL_QUIT :
 				return (0);
 			case Const::CONTROL_NEXT :
 				return (stage);
@@ -85,7 +85,7 @@ void	Menu::show_how_to_select(void)
 	mvwprintw(miw, 5, 2, "'%c' -> up", Const::CONTROL_UP);
 	mvwprintw(miw, 6, 2, "'%c' -> down", Const::CONTROL_DOWN);
 	mvwprintw(miw, 7, 2, "'%c' -> select", Const::CONTROL_NEXT);
-	mvwprintw(miw, 8, 2, "'%c / 0' -> go back", Const::CONTROL_BACK);
+	mvwprintw(miw, 8, 2, "'%c / 0' -> go back", Const::CONTROL_QUIT);
 	box(miw, ACS_VLINE, ACS_HLINE);
 	wrefresh(miw);
 }
