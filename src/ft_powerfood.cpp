@@ -11,10 +11,10 @@ void	Powerfood::init(int arg_y, int arg_x, int arg_state)
 // パワーエサを指定の座標に表示する関数
 void	Powerfood::draw(void)
 {
-	if (state == Const::INACTIVE)
+	if (state == INACTIVE)
 		return ;
-	wattrset(gamew, COLOR_PAIR(Const::POWERFOOD));
-	mvwaddstr(gamew, y, x * 2, "⏳");
+	wattrset(gamew, COLOR_PAIR(POWERFOOD));
+	mvwaddstr(gamew, y, x * 2, ILLUST_POWERFOOD);
 }
 
 // パワーエサがヒーローに衝突したかどうかを判定をする関数
@@ -22,7 +22,7 @@ bool	Powerfood::GetPowerFood(Hero h)
 {
 	if ((y == h.y) && (x == h.x))
 	{
-		state = Const::INACTIVE;
+		state = INACTIVE;
 		return (true);
 	}
 	else

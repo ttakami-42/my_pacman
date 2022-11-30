@@ -8,28 +8,29 @@
 // ワニを表現するためのクラス
 class Wani
 {
-private:
-	int y;
-	int x;
-	const int wait_max_slow = 25;
-	const int wait_max_fast = 20;
-	int wait_max = wait_max_slow;
-	int wait = 0;
-	int direction;
-	int state;
+	private:
 
-public:
-	// ワニを初期化する関数
-	void init(int arg_y, int arg_x, int arg_direction, int arg_state);
+		int			y;
+		int			x;
+		const int	wait_max_slow = 25;
+		const int	wait_max_fast = 20;
+		int			wait_max = wait_max_slow;
+		int			wait = 0;
+		int			direction;
+		int			state;
 
-	// ワニの座標を更新する関数
-	void move(Map* m, Hero h);
+	public:
+		// ワニを初期化する関数
+		void	init(int arg_y, int arg_x, int arg_direction, int arg_state);
 
-	// ワニを指定の座標に表示する関数
-	void draw(void);
+		// ワニの座標を更新する関数
+		void	move(Map* m, Hero h);
 
-	// ワニがヒーローに衝突したかどうかを判定をする関数
-	bool killedHero(Hero h);
+		// ワニを指定の座標に表示する関数
+		void	draw(void);
+
+		// ワニがヒーローに衝突したかどうかを判定をする関数
+		bool	killedHero(Hero h);
 };
 
 #endif

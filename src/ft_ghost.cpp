@@ -11,7 +11,7 @@ void	Ghost::init(int arg_y, int arg_x, int arg_state)
 // 幽霊の座標を更新する関数
 void	Ghost::move(Hero h)
 {
-	if (state == Const::INACTIVE)
+	if (state == INACTIVE)
 		return ;
 	if (wait > 0)
 	{
@@ -40,10 +40,10 @@ void	Ghost::move(Hero h)
 // 幽霊を指定の座標に表示する関数
 void	Ghost::draw(void)
 {
-	if (state == Const::INACTIVE)
+	if (state == INACTIVE)
 		return ;
-	wattrset(gamew, COLOR_PAIR(Const::GOST));
-	mvwaddstr(gamew, y, x * 2, "👻");
+	wattrset(gamew, COLOR_PAIR(GHOST));
+	mvwaddstr(gamew, y, x * 2, ILLUST_GHOST);
 }
 
 // 幽霊がヒーローに衝突したかどうかを判定をする関数

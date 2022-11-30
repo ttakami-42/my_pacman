@@ -6,9 +6,10 @@
 class	Banner
 {
 	public:
-		static	void	show_banner(int stage, int pause_flag);
-		static	void	update_banner(int esa);
-		static	void	update_banner(char game_state);
+
+		static void	show_banner(int stage, int pause_flag);
+		static void	update_banner(int esa);
+		static void	update_banner(char game_state);
 };
 
 #endif

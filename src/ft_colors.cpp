@@ -19,14 +19,15 @@ void	init_colors(void)
 	init_pair(16, COLOR_WHITE,   COLOR_BLACK);
 	init_pair(17, COLOR_GREEN,   COLOR_BLACK);
 	init_pair(18, COLOR_MAGENTA, COLOR_BLACK);
-	init_pair(Const::WALL, COLOR_BLACK,    COLOR_CYAN);
-	init_pair(Const::ROAD, COLOR_BLACK,    COLOR_BLACK);
-	init_pair(Const::FOOD, COLOR_YELLOW,   COLOR_BLACK);
-	init_pair(Const::HERO, COLOR_YELLOW,   COLOR_BLACK);
-	init_pair(Const::WANI, COLOR_GREEN,    COLOR_BLACK);
-	init_pair(Const::GOST, COLOR_WHITE,    COLOR_BLACK);
-	init_pair(Const::MESG, COLOR_WHITE,    COLOR_BLACK);
-	init_pair(Const::POWERFOOD, COLOR_RED, COLOR_BLACK);
+
+	init_pair(WALL, COLOR_BLACK,    COLOR_CYAN);
+	init_pair(ROAD, COLOR_BLACK,    COLOR_BLACK);
+	init_pair(FOOD, COLOR_YELLOW,   COLOR_BLACK);
+	init_pair(HERO, COLOR_YELLOW,   COLOR_BLACK);
+	init_pair(WANI, COLOR_GREEN,    COLOR_BLACK);
+	init_pair(GHOST, COLOR_WHITE,   COLOR_BLACK);
+	init_pair(MESG, COLOR_WHITE,    COLOR_BLACK);
+	init_pair(POWERFOOD, COLOR_RED, COLOR_BLACK);
 }
 
 void	init_bg_colors(void)

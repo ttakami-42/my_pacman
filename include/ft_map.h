@@ -5,12 +5,13 @@
 
 class Map
 {
-private:
-	static const int MAP_SIZE_Y = 25; // マップの縦幅
-	static const int MAP_SIZE_X = 20; // マップの横幅
-	int data[MAP_SIZE_Y][MAP_SIZE_X];
+	private:
 
-	int stage1[MAP_SIZE_Y][MAP_SIZE_X] = {
+		static const int	MAP_SIZE_Y = 25;
+		static const int	MAP_SIZE_X = 20;
+		int					data[MAP_SIZE_Y][MAP_SIZE_X];
+
+		int stage1[MAP_SIZE_Y][MAP_SIZE_X] = {
 			{ 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 },
 			{ 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 },
 			{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
@@ -38,7 +39,7 @@ private:
 			{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
 		};
 
-	int stage2[MAP_SIZE_Y][MAP_SIZE_X] = {
+		int stage2[MAP_SIZE_Y][MAP_SIZE_X] = {
 			{ 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 },
 			{ 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 },
 			{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
@@ -65,8 +66,8 @@ private:
 			{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
 			{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
 		};
-		
-	int stage3[MAP_SIZE_Y][MAP_SIZE_X] = {
+
+		int stage3[MAP_SIZE_Y][MAP_SIZE_X] = {
 			{ 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 },
 			{ 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 },
 			{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
@@ -94,39 +95,39 @@ private:
 			{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
 		};
 
-public:
-	// ステージ（面）ごとの初期化用関数
-	void init(int stage);
+	public:
+		// ステージ（面）ごとの初期化用関数
+		void	init(int stage);
 
-	// マップを描画する関数
-	void drawmap(char game_state);
+		// マップを描画する関数
+		void	drawmap(char game_state);
 
-	// ヒーローによってエサが食べられて消える処理をする関数
-	void	eaten(int y, int x)
-	{ 
-		data[y][x] = Const::ROAD;
-	}
+		// ヒーローによってエサが食べられて消える処理をする関数
+		void	eaten(int y, int x)
+		{ 
+			data[y][x] = ROAD;
+		}
 
-	// 座標(y, x)の場所がエサならtrue、それ以外ならばfalseを返す関数
-	bool	isFood(int y, int x)
-	{
-		return (data[y][x] == Const::FOOD);
-	}
+		// 座標(y, x)の場所がエサならtrue、それ以外ならばfalseを返す関数
+		bool	isFood(int y, int x)
+		{
+			return (data[y][x] == FOOD);
+		}
 
-	// 座標(y, x)の場所が壁ならtrue、それ以外ならばfalseを返す関数
-	bool	isWall(int y, int x)
-	{
-		return (data[y][x] == Const::WALL);
-	}
+		// 座標(y, x)の場所が壁ならtrue、それ以外ならばfalseを返す関数
+		bool	isWall(int y, int x)
+		{
+			return (data[y][x] == WALL);
+		}
 
-	// マップ上に現在エサが何個残っているかを数える関数
-	int countUneatenFoods(void);
+		// マップ上に現在エサが何個残っているかを数える関数
+		int		countUneatenFoods(void);
 
-	// 文字列（定数）を指定の座標に表示する関数
-	void printString(int y, int x, const char msg[]);
+		// 文字列（定数）を指定の座標に表示する関数
+		void	printString(int y, int x, const char msg[]);
 
-	// 整数を指定の座標に表示する関数
-	void printInt(int y, int x, int n);
+		// 整数を指定の座標に表示する関数
+		void	printInt(int y, int x, int n);
 };
 
 #endif

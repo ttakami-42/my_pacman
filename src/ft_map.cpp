@@ -32,9 +32,9 @@ void	Map::drawmap(char game_state)
 			s = game_state;
 			switch (c)
 			{
-				case Const::WALL:
+				case WALL:
 					if (s == 'p')
-					{wattrset(gamew, COLOR_PAIR(Const::WALL)); mvwaddstr(gamew, y, x * 2, "  ");}
+					{wattrset(gamew, COLOR_PAIR(WALL)); mvwaddstr(gamew, y, x * 2, "  ");}
 					if (s == 'c')
 					{wattrset(gamew, COLOR_PAIR(9)); mvwaddstr(gamew, y, x * 2, "  ");}
 					if (s == 'g')
@@ -42,11 +42,11 @@ void	Map::drawmap(char game_state)
 					if (s == 'a')
 					{wattrset(gamew, COLOR_PAIR(10)); mvwaddstr(gamew, y, x * 2, "  ");}
 					break;
-				case Const::ROAD:
-					wattrset(gamew, COLOR_PAIR(Const::ROAD)); mvwaddstr(gamew, y, x * 2, "  ");
+				case ROAD:
+					wattrset(gamew, COLOR_PAIR(ROAD)); mvwaddstr(gamew, y, x * 2, "  ");
 					break;
-				case Const::FOOD:
-					wattrset(gamew, COLOR_PAIR(Const::FOOD)); mvwaddstr(gamew, y, x * 2, "🍒"); //"🪙, 🍒"
+				case FOOD:
+					wattrset(gamew, COLOR_PAIR(FOOD)); mvwaddstr(gamew, y, x * 2, "🍒"); //"🪙, 🍒"
 					break;
 			}
 		}
@@ -62,7 +62,7 @@ int		Map::countUneatenFoods(void)
 	{
 		for (int x = 0; x < MAP_SIZE_X; x++)
 		{
-			if (data[y][x] == Const::FOOD)
+			if (data[y][x] == FOOD)
 				q++;
 		}
 	}
@@ -72,13 +72,13 @@ int		Map::countUneatenFoods(void)
 // 文字列（定数）を指定の座標に表示する関数
 void	Map::printString(int y, int x, const char msg[])
 {
-	wattrset(gamew, COLOR_PAIR(Const::MESG));
+	wattrset(gamew, COLOR_PAIR(MESG));
 	mvwaddstr(gamew, y, x * 2, msg);
 }
 
 // 整数を指定の座標に表示する関数
 void	Map::printInt(int y, int x, int n)
 {
-	wattrset(gamew, COLOR_PAIR(Const::MESG));
+	wattrset(gamew, COLOR_PAIR(MESG));
 	mvwprintw(gamew, y, x * 2, "%d", n);
 }

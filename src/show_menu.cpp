@@ -7,7 +7,7 @@ int		show_menu(void)
 
 	box(menuw, ACS_VLINE, ACS_HLINE);
 	menu.show_title();
-	for(size_t i = 0; i < Const::NITEMS; i++)
+	for(size_t i = 0; i < NUMBER_OF_MITEMS; i++)
 	{
 		if(i == 0)
 			wattron(menuw, A_STANDOUT);
@@ -16,9 +16,9 @@ int		show_menu(void)
 		std::snprintf(menu.item, sizeof(menu.item), "%s", menu.LIST[i]);
 		mvwprintw(menuw, i + 1, 2, "%s", menu.item);
 	}
-	mvwprintw(menuw, 11, 2, "'%c' -> Up", Const::CONTROL_UP);
-	mvwprintw(menuw, 12, 2, "'%c' -> Down", Const::CONTROL_DOWN);
-	mvwprintw(menuw, 13, 2, "Press '%c' to select ", Const::CONTROL_NEXT);
+	mvwprintw(menuw, 11, 2, "'%c' -> Up", CONTROL_UP);
+	mvwprintw(menuw, 12, 2, "'%c' -> Down", CONTROL_DOWN);
+	mvwprintw(menuw, 13, 2, "Press '%c' to select ", CONTROL_NEXT);
 	wrefresh(menuw);
 	keypad(menuw, TRUE);
 	stage = menu.control_menu();

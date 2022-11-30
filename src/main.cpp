@@ -16,7 +16,7 @@ int		main(void)
 	curs_set(0);
 	noecho();
 	cbreak();
-	timeout(Const::GETCH_WAIT);
+	timeout(GETCH_WAIT);
 	while (1)
 	{
 		init_bg_colors();
@@ -36,7 +36,7 @@ int		main(void)
 			//system("xset r off");
 			play_game(stage_no);
 			del_game_windows();
-			//system("/usr/bin/xset r rate 500 33");
+			//system("xset r rate 500 33");
 		}
 	}
 }

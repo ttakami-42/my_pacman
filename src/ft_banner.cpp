@@ -38,7 +38,7 @@ void	Banner::update_banner(int esa)
 void	Banner::update_banner(char game_state)
 {
 	werase(bannerw);
-	if (game_state == Const::CLEARED)
+	if (game_state == CLEARED)
 	{
 		wattrset(bannerw, COLOR_PAIR(17));
 		box(bannerw, ' ', ' ');
@@ -48,7 +48,7 @@ void	Banner::update_banner(char game_state)
 		wattroff(bannerw, COLOR_PAIR(17));
 		wrefresh(bannerw);
 	}
-	if (game_state == Const::GAMEOVER)
+	if (game_state == GAMEOVER)
 	{
 		wattrset(bannerw, COLOR_PAIR(12));
 		box(bannerw, ' ', ' ');

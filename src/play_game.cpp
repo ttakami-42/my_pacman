@@ -12,31 +12,31 @@ void	play_game(int stage)
 	{
 		ch = getch();
 		state = asset.getGameState();
-		if (ch == Const::CONTROL_PAUSE && (state == Const::PLAYING || state == Const::ALMIGHTY))
+		if (ch == CONTROL_PAUSE && (state == PLAYING || state == ALMIGHTY))
 			Banner::show_banner(stage, 1);
-		if (ch == Const::CONTROL_QUIT && (state == Const::PLAYING || state == Const::ALMIGHTY))
+		if (ch == CONTROL_QUIT && (state == PLAYING || state == ALMIGHTY))
 			return ;
-		if ((state == Const::CLEARED || (state == Const::GAMEOVER)) && (ch == ' '))
+		if ((state == CLEARED || (state == GAMEOVER)) && (ch == ' '))
 			return ;
-		if (state == Const::PLAYING)
+		if (state == PLAYING)
 		{
 			asset.replaceHero(ch);
 			asset.moveEnemies();
 			state = asset.getGameState();
 		}
-		if (state == Const::ALMIGHTY)
+		if (state == ALMIGHTY)
 		{
 			asset.replaceHero(ch);
 			asset.addPowerTime();
-			if (asset.getPowerTime() > Const::POWERTIME)
-				asset.setGameState(Const::PLAYING);
+			if (asset.getPowerTime() > POWERTIME)
+				asset.setGameState(PLAYING);
 		}
 		werase(gamew);
 		asset.drawAll();
 		asset.printState();
 		wrefresh(gamew);
 		if (asset.getUneatenFoods() == 0)
-			asset.setGameState(Const::CLEARED);
+			asset.setGameState(CLEARED);
 	}
 	return ;
 }

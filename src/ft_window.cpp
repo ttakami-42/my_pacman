@@ -1,5 +1,6 @@
 #include "../include/ft_window.h"
 
+// メニューウィンドウの初期化
 void	init_menu_windows(void)
 {
 	menuw = newwin(15, 25, 8, 14);
@@ -7,28 +8,15 @@ void	init_menu_windows(void)
 	titlew = newwin(7, 44, 1, 20);
 }
 
-// ウィンドウの初期化
+// ゲームウィンドウの初期化
 void	init_game_windows(void)
 {
-	gamew = newwin(Const::GAME_HEIGHT, Const::GAME_WIDTH, 0, 0);
-	instw = newwin(Const::GAME_HEIGHT / 5, Const::GAME_WIDTH - 15, 6, Const::GAME_WIDTH);
-	bannerw = newwin(8, Const::GAME_WIDTH - 15, 16, Const::GAME_WIDTH);
+	gamew = newwin(GAME_HEIGHT, GAME_WIDTH, 0, 0);
+	instw = newwin(GAME_HEIGHT / 5, GAME_HEIGHT / 2, GAME_HEIGHT / 8, GAME_WIDTH);
+	bannerw = newwin(GAME_HEIGHT / 6, GAME_HEIGHT / 2, GAME_HEIGHT / 3, GAME_WIDTH);
 }
 
-// ウィンドウの消去
-void	del_game_windows(void)
-{
-	werase(gamew);
-	werase(instw);
-	werase(bannerw);
-	wrefresh(gamew);
-	wrefresh(instw);
-	wrefresh(bannerw);
-	delwin(gamew);
-	delwin(instw);
-	delwin(bannerw);
-}
-
+// メニューウィンドウの消去
 void	del_menu_windows(void)
 {
 	werase(menuw);
@@ -40,4 +28,18 @@ void	del_menu_windows(void)
 	delwin(menuw);
 	delwin(miw);
 	delwin(titlew);
+}
+
+// ゲームウィンドウの消去
+void	del_game_windows(void)
+{
+	werase(gamew);
+	werase(instw);
+	werase(bannerw);
+	wrefresh(gamew);
+	wrefresh(instw);
+	wrefresh(bannerw);
+	delwin(gamew);
+	delwin(instw);
+	delwin(bannerw);
 }
