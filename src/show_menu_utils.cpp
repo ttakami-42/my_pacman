@@ -71,7 +71,7 @@ void	Menu::show_title(void)
 {
 	wattrset(titlew, COLOR_PAIR(7));
 	box(titlew, ' ', ACS_BULLET);
-	for (int i = 0; i < sizeof(title_ascii) / sizeof(*title_ascii); i++)
+	for (int i = 0; i < int(sizeof(title_ascii) / sizeof(*title_ascii)); i++)
 		mvwprintw(titlew, i + 1, 1, title_ascii[i]);
 	wattroff(titlew, COLOR_PAIR(7));
 	wrefresh(titlew);

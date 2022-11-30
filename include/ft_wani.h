@@ -21,7 +21,7 @@ class Wani
 
 	public:
 		// ワニを初期化する関数
-		void	init(int arg_y, int arg_x, int arg_direction, int arg_state);
+		void	init(int arg_y, int arg_x, int arg_state);
 
 		// ワニの座標を更新する関数
 		void	move(Map* m, Hero h);

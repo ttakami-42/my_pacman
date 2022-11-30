@@ -1,11 +1,14 @@
 #include "../include/ft_wani.h"
 
 // ワニを初期化する関数
-void	Wani::init(int arg_y, int arg_x, int arg_direction, int arg_state)
+void	Wani::init(int arg_y, int arg_x, int arg_state)
 {
 	y = arg_y;
 	x = arg_x;
-	direction = arg_direction;
+	if (arg_state == INACTIVE)
+		direction = STOP;
+	else
+		direction = RIGHT;
 	state = arg_state;
 }
 

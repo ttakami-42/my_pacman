@@ -7,7 +7,7 @@
 namespace	Global_Vars
 {
 	// キャラクターの移動方向や状態を表す定数
-	static const int	INACTIVE = 0;
+	static const int	INACTIVE = -1;
 	static const int	ACTIVE   = 1;
 	static const int	UP       = 2;
 	static const int	RIGHT    = 3;

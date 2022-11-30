@@ -6,31 +6,27 @@ void	Asset::initAsset(int stage)
 	hero.init(13, 10);
 	if (stage == 1)
 	{
-		wani[0].init( 9, 7, RIGHT, ACTIVE);
-		wani[1].init(12, 12, RIGHT, ACTIVE);
+		wani[0].init(9, 7, ACTIVE);
+		wani[1].init(12, 12, ACTIVE);
 		inactivateAsset(wani, 2, NUMBER_OF_WANIS);
 		inactivateAsset(ghost, 0, NUMBER_OF_GHOSTS);
 		inactivateAsset(powerfood, 0, NUMBER_OF_POWERFOODS);
 	}
 	else if (stage == 2)
 	{
-		wani[0].init(8, 11, STOP, ACTIVE);
-		wani[1].init(8, 8, STOP, ACTIVE);
-		wani[2].init(18, 7, STOP, ACTIVE);
-		wani[3].init(18, 12, STOP, ACTIVE);
-		inactivateAsset(wani, 4, NUMBER_OF_WANIS);
-		ghost[0].init( 2, 1, ACTIVE);
+		inactivateAsset(wani, 0, NUMBER_OF_WANIS);
+		ghost[0].init(2, 1, ACTIVE);
 		ghost[1].init(24, 18, ACTIVE);
 		inactivateAsset(ghost, 2, NUMBER_OF_GHOSTS);
 		inactivateAsset(powerfood, 0, NUMBER_OF_POWERFOODS);
 	}
 	else if (stage == 3)
 	{
-		wani[0].init(20, 14, RIGHT, ACTIVE);
-		wani[1].init(15, 16, RIGHT, ACTIVE);
-		wani[2].init(9, 10, LEFT, ACTIVE);
-		wani[3].init(21, 19, RIGHT, ACTIVE);
-		wani[4].init(6, 3, LEFT, ACTIVE);
+		wani[0].init(20, 14, ACTIVE);
+		wani[1].init(15, 16, ACTIVE);
+		wani[2].init(9, 10, ACTIVE);
+		wani[3].init(21, 19, ACTIVE);
+		wani[4].init(6, 3, ACTIVE);
 		inactivateAsset(ghost, 0, NUMBER_OF_GHOSTS);
 		powerfood[0].init(19, 10, ACTIVE);
 		inactivateAsset(powerfood, 1, NUMBER_OF_POWERFOODS);

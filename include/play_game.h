@@ -34,13 +34,7 @@ class	Asset
 		void	inactivateAsset(OBJ o, int n, int max)
 		{
 			for (; n < max; n++)
-				o[n].init(-1, -1, INACTIVE);
-		}
-		template <>
-		void	inactivateAsset(Wani *w, int n, int max)
-		{
-			for (; n < max; n++)
-				w[n].init(-1, -1, STOP, INACTIVE);
+				o[n].init(INACTIVE, INACTIVE, INACTIVE);
 		}
 		
 		void	initAsset(int stage);
