@@ -1,7 +1,7 @@
 #include "../include/ft_window.h"
 
 // メニューウィンドウの初期化
-void	init_menu_windows(void)
+void	init_menu_window(void)
 {
 	menuw = newwin(15, 25, 8, 14);
 	miw = newwin(10, 35, 10, 40);
@@ -9,7 +9,7 @@ void	init_menu_windows(void)
 }
 
 // ゲームウィンドウの初期化
-void	init_game_windows(void)
+void	init_game_window(void)
 {
 	gamew = newwin(GAME_HEIGHT, GAME_WIDTH, 0, 0);
 	instw = newwin(GAME_HEIGHT / 5, GAME_HEIGHT / 2, GAME_HEIGHT / 8, GAME_WIDTH);
@@ -17,7 +17,7 @@ void	init_game_windows(void)
 }
 
 // メニューウィンドウの消去
-void	del_menu_windows(void)
+void	del_menu_window(void)
 {
 	werase(menuw);
 	werase(miw);
@@ -31,7 +31,7 @@ void	del_menu_windows(void)
 }
 
 // ゲームウィンドウの消去
-void	del_game_windows(void)
+void	del_game_window(void)
 {
 	werase(gamew);
 	werase(instw);

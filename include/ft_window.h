@@ -3,9 +3,9 @@
 
 # include "ft_global.h"
 
-void	init_game_windows(void);
-void	init_menu_windows(void);
-void	del_game_windows(void);
-void	del_menu_windows(void);
+void	init_game_window(void);
+void	init_menu_window(void);
+void	del_game_window(void);
+void	del_menu_window(void);
 
 #endif

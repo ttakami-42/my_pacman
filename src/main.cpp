@@ -20,9 +20,9 @@ int		main(void)
 	while (1)
 	{
 		init_bg_colors();
-		init_menu_windows();
+		init_menu_window();
 		stage_no = show_menu();
-		del_menu_windows();
+		del_menu_window();
 		if (stage_no == END_GAME)
 		{
 			endwin();
@@ -30,12 +30,12 @@ int		main(void)
 		}
 		if (stage_no >= 1)
 		{
-			init_game_windows();
+			init_game_window();
 			Menu::show_how_to_play(instw);
 			//keypad(gamew, TRUE);
 			//system("xset r off");
 			play_game(stage_no);
-			del_game_windows();
+			del_game_window();
 			//system("xset r rate 500 33");
 		}
 	}

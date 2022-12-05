@@ -7,9 +7,9 @@
 class Powerfood
 {
 	private:
-		int y;
-		int x;
-		int state;
+		int	y;
+		int	x;
+		int	state;
 
 	public:
 		// パワーエサを初期化する関数
