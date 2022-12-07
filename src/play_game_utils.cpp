@@ -25,7 +25,7 @@ void	Asset::initAsset(int stage)
 		wani[0].init(20, 14, ACTIVE);
 		wani[1].init(15, 16, ACTIVE);
 		wani[2].init(9, 10, ACTIVE);
-		wani[3].init(21, 19, ACTIVE);
+		wani[3].init(11, 13, ACTIVE);
 		wani[4].init(6, 3, ACTIVE);
 		inactivateAsset(ghost, 0, NUMBER_OF_GHOSTS);
 		powerfood[0].init(19, 10, ACTIVE);
