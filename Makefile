@@ -17,10 +17,7 @@ else
 	LIB	= -lncurses
 endif
 
-all: directories $(NAME)
-
-directories:
-	@mkdir -p $(OBJDIR)
+all: $(NAME)
 
 clean:
 	rm -rf $(OBJDIR)
@@ -31,12 +28,13 @@ fclean: clean
 re: fclean all
 
 $(OBJDIR)/%.o:	%.cpp
+	@mkdir -p $(OBJDIR)
 	@[ -d $(OBJDIR) ]
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIB)
 
-.PHONY: all directories clean fclean re
+.PHONY: all clean fclean re
 
 vpath %.cpp src
