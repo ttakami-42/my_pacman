@@ -5,7 +5,11 @@ pacman using c++ &amp; ncurses.
 Ncurses (or Ncursesw) is a library for managing screens, keystrokes, cursors, etc. in CUI.
 
 ## Usage
+Build
 ```sh
 make
+```
+Run
+```sh
 ./pacman
 ```
