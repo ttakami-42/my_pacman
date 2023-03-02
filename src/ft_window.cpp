@@ -5,7 +5,7 @@ void	init_menu_window(void)
 {
 	menuw = newwin(15, 25, 8, 14);
 	miw = newwin(10, 35, 10, 40);
-	titlew = newwin(7, 44, 1, 20);
+	titlew = newwin(7, 44, 1, 15);
 }
 
 // ゲームウィンドウの初期化

@@ -96,10 +96,10 @@ void	Menu::show_how_to_play(WINDOW *w)
 	mvwprintw(w, 1, 2, "Controls :");
 	mvwprintw(w, 3, 2, "Move Left -> %c", CONTROL_LEFT);
 	mvwprintw(w, 4, 2, "Move Right -> %c", CONTROL_RIGHT);
-	mvwprintw(w, 5, 2, "Move down -> %c", CONTROL_DOWN);
-	mvwprintw(w, 6, 2, "Move up -> %c", CONTROL_UP);
+	mvwprintw(w, 5, 2, "Move Down -> %c", CONTROL_DOWN);
+	mvwprintw(w, 6, 2, "Move Up -> %c", CONTROL_UP);
 	mvwprintw(w, 7, 2, "Pause Game -> p");
-	mvwprintw(w, 8, 2, "Quit game -> q");
+	mvwprintw(w, 8, 2, "Quit Game -> q");
 	box(w, ACS_VLINE, ACS_HLINE);
 	wrefresh(w);
 }
