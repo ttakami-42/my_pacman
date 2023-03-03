@@ -10,7 +10,7 @@ class Menu
 {
 	public:
 
-		static inline const char	menu_list[NUMBER_OF_MITEMS][20] = {
+		static inline const char	item_list[NUMBER_OF_MITEMS][20] = {
 			"New Game",
 			"Instructions",
 			"About Developers",
@@ -27,7 +27,6 @@ class Menu
 		int		stage;
 		int		ch;
 		int		dh;
-		char	item[20];
 
 		int			control_menu(void);
 		int			select_stage(void);

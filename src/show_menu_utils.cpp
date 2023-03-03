@@ -8,7 +8,7 @@ int		Menu::control_menu(void)
 	while (1)
 	{
 		ch = wgetch(menuw);
-		mvwprintw(menuw, i + 1, 2, "%s", menu_list[i]);
+		mvwprintw(menuw, i + 1, 2, "%s", item_list[i]);
 		switch (ch)
 		{
 			case CONTROL_UP:
@@ -121,6 +121,6 @@ void	Menu::show_dev_info(void)
 void	Menu::highlight_menu(int i)
 {
 	wattron(menuw, A_STANDOUT);
-	mvwprintw(menuw, i + 1, 2, "%s", menu_list[i]);
+	mvwprintw(menuw, i + 1, 2, "%s", item_list[i]);
 	wattroff(menuw, A_STANDOUT);
 }

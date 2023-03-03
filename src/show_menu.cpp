@@ -13,7 +13,7 @@ int		show_menu(void)
 			wattron(menuw, A_STANDOUT);
 		else
 			wattroff(menuw, A_STANDOUT);
-		mvwprintw(menuw, i + 1, 2, "%s", menu.menu_list[i]);
+		mvwprintw(menuw, i + 1, 2, "%s", menu.item_list[i]);
 	}
 	mvwprintw(menuw, 11, 2, "'%c' -> Up", CONTROL_UP);
 	mvwprintw(menuw, 12, 2, "'%c' -> Down", CONTROL_DOWN);
