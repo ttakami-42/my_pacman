@@ -2,7 +2,7 @@
 pacman using c++ &amp; ncurses.
 <br>This game was created as a university assignment in the summer of _2021_, and has since been gradually improved. 
 <br>I still occasionally add code to it.
-Initially, it was a simple program that started the game when executed.
+<br>.Initially, it was a simple program that started the game when executed.
 Instead of release notes, here are the features that have been added so far:
 
 * Menu screen.
