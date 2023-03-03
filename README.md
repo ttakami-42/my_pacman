@@ -39,4 +39,4 @@ Run.
 > <br>I tested this program on my WSL2-Windows11 PC and M1-MacbookAir. Any probrems!
 
 ## Screenshots
-![ss_pacman_menu](https://user-images.githubusercontent.com/67182687/222732313-3e32bdb0-4c35-49e8-92a5-aa74d960f25f.png)
+![ss_pacman_menu](https://user-images.githubusercontent.com/67182687/222733784-ce4c5f86-e5b2-458d-9c29-3b83513479e6.png)
