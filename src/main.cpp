@@ -32,11 +32,8 @@ int		main(void)
 		{
 			init_game_window();
 			Menu::show_how_to_play(instw);
-			//keypad(gamew, TRUE);
-			//system("xset r off");
 			play_game(stage_no);
 			del_game_window();
-			//system("xset r rate 500 33");
 		}
 	}
 }

@@ -10,21 +10,21 @@ class Menu
 {
 	public:
 
-		static inline const char	LIST[NUMBER_OF_MITEMS][20] = {
+		static inline const char	menu_list[NUMBER_OF_MITEMS][20] = {
 			"New Game",
 			"Instructions",
 			"About Developers",
 			"Exit"
 		};
-		static inline const char	title_ascii[5][45] = {
-			"  _ __   __ _  ___ _ __ ___   __ _ _ __   ",
-			" | '_ \\ / _` |/ __| '_ ` _ \\ / _` | '_ \\  ",
-			" | |_) | (_| | (__| | | | | | (_| | | | | ",
-			" | .__/ \\__,_|\\___|_| |_| |_|\\__,_|_| |_| ",
-			" |_|                                      "
+		static inline const char	title_ascii[5][43] = {
+			" _ __   __ _  ___ _ __ ___   __ _ _ __  ",
+			"| '_ \\ / _` |/ __| '_ ` _ \\ / _` | '_ \\ ",
+			"| |_) | (_| | (__| | | | | | (_| | | | |",
+			"| .__/ \\__,_|\\___|_| |_| |_|\\__,_|_| |_|",
+			"|_|                                     "
 		};
 
-		int		stage = 0;
+		int		stage;
 		int		ch;
 		int		dh;
 		char	item[20];

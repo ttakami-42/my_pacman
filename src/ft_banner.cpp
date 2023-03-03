@@ -1,6 +1,5 @@
 #include "../include/ft_banner.h"
 
-// ゲーム中に表示するステータス
 void	Banner::show_banner(int stage, int pause_flag)
 {
 	werase(bannerw);
@@ -24,7 +23,6 @@ void	Banner::show_banner(int stage, int pause_flag)
 	wrefresh(bannerw);
 }
 
-// ステータスをアップデート
 void	Banner::update_banner(int esa)
 {
 	wclrtoeol(bannerw);
@@ -34,7 +32,6 @@ void	Banner::update_banner(int esa)
 	wrefresh(bannerw);
 }
 
-// ゲームオーバーまたはクリアのときの表示
 void	Banner::update_banner(char game_state)
 {
 	werase(bannerw);
