@@ -8,9 +8,6 @@ pacman using c++ &amp; ncurses.
 * Optimization of enemy characters.
 * Invincibility item.
 
-> **Warning**
-> <br>By the way, Those sentences above is written by ChatGPT. Is it enough???
-
 ## What is Nucurses?
 Ncurses (or Ncursesw) is a library for managing screens, keystrokes, cursors, etc. in CUI.
 
