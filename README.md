@@ -8,7 +8,7 @@ pacman using c++ &amp; ncurses.
 * Optimization of enemy characters.
 * Invincibility item.
 
-## What is Nucurses?
+## What is Ncurses?
 Ncurses (or Ncursesw) is a library for managing screens, keystrokes, cursors, etc. in CUI.
 
 ## Usage
